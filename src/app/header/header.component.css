@@ -1,0 +1,45 @@
+
+nav {
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    background-color: #097D4C;
+    height: 60px; /* Adjust to your design */
+    padding: 0;
+    margin: 0;
+}
+
+nav div {
+    display: flex;
+    align-items: center; /* Ensures content inside is centered */
+    padding: 0;
+    margin: 0;
+}
+
+nav img {
+    display: block;
+    height: 35px;
+    align-self: center; /* Align this image to the middle */
+}
+
+/* For medium screens: hide ReReadLogo and shrink the search bar */
+@media (max-width: 768px) {
+    nav div:nth-child(2) input {
+        display: none; /* Hide the search bar */ 
+    }
+    nav div:nth-child(3) {
+        display: none; /* Hide right-most div (icons) */
+    }
+}
+
+/* For smaller screens: hide both ReReadLogo and the search bar */
+@media (max-width: 480px) {
+    nav div:nth-child(1) {
+        display: none; /* Hide the div of ReReadLogo */
+    }
+    nav div:nth-child(2) {
+        display: none; /* Hide the search bar */
+    }
+    nav div:nth-child(3) {
+        display: none; /* Hide right-most div (icons) */
+    }
+}

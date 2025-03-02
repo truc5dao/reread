@@ -1,0 +1,58 @@
+<div class="book-detail" *ngIf="book" style="margin-top: 60px;">
+    <!-- Left Section: Images -->
+    <div class="book-images">
+        <div class="thumbnail-list">
+            <img *ngFor="let img of bookImages"
+                 [src]="img"
+                 (click)="setMainImage(img)"
+                 class="thumbnail"
+                 alt="Book Thumbnail">
+          </div>
+          
+        <div class="main-image">
+            <img [src]="mainImage" 
+                 alt="{{ book.BookTitle }}">
+        </div>
+    </div>
+  
+    <!-- Right Section: Book Details -->
+    <div class="book-info">
+        <h1>{{ book.BookTitle || 'Unknown Title' }}</h1>
+        <p class="book-price">
+            <span class="discounted-price">
+                {{ (selectedCondition?.BookPrice ?? 0) * (100 - (selectedCondition?.BookSales ?? 0)) / 100 | currency:'USD' }}
+            </span>
+            <span class="original-price" *ngIf="selectedCondition?.BookSales">
+                {{ selectedCondition?.BookPrice | currency }}
+            </span>
+            <span class="discount" *ngIf="selectedCondition?.BookSales">-{{ selectedCondition?.BookSales }}%</span>
+        </p>
+  
+        <p><strong>Language:</strong> {{ book.BookLang }}</p>
+        <p><strong>Publisher:</strong> {{ book.BookPub }}</p>
+  
+        <!-- Condition Selection -->
+        <h4>Select Condition:</h4>
+        <div class="condition">
+            <button *ngFor="let condition of availableConditions"
+                    [class.active]="selectedCondition === condition"
+                    (click)="selectCondition(condition)">
+                {{ condition.BookCond }}
+            </button>
+        </div>
+  
+        <!-- Quantity Selection -->
+        <div class="quantity">
+            <button (click)="decreaseQuantity()">-</button>
+            <input type="number" [(ngModel)]="quantity" min="1" max="{{ selectedCondition?.CurrentQty }}">
+            <button (click)="increaseQuantity()">+</button>
+            <span class="available">({{ selectedCondition?.CurrentQty }} Available)</span>
+        </div>
+  
+        <!-- Action Buttons -->
+        <div class="actions">
+            <button class="add-to-cart">🛒 Add To Cart</button>
+            <button class="buy-now">Buy Now</button>
+        </div>
+    </div>
+</div>

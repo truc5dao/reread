@@ -1,0 +1,179 @@
+.book-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Responsive Design: Stack vertically on small screens */
+@media (max-width: 768px) {
+    .book-detail {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .book-images {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .thumbnail-list {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .thumbnail {
+        width: 60px; /* Smaller thumbnails for small screens */
+    }
+
+    .main-image img {
+        height: auto;
+        width: 80%; /* Adjust main image width */
+    }
+    
+    .book-info {
+        width: 100%;
+    }
+}
+
+.book-images {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.thumbnail {
+    width: 70px;
+    height: auto;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 5px;
+    transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.main-image img {
+    height: 545px; /* Default height for larger screens */
+    border: 2px solid #ddd;
+    padding: 10px;
+    max-width: 100%;
+}
+
+.book-info {
+    flex: 1;
+}
+
+/* Typography and Pricing */
+h1 {
+    color: #00ff99;
+    margin-bottom: 10px;
+}
+
+.book-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.discounted-price {
+    color: #ffcc00;
+}
+
+.original-price {
+    text-decoration: line-through;
+    margin-left: 10px;
+    color: #999;
+}
+
+.discount {
+    background: red;
+    color: white;
+    padding: 3px 6px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+.condition button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: #222;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.condition button.active {
+    background: #00ff99;
+    color: #111;
+}
+
+/* Quantity Selector */
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.quantity button {
+    width: 30px;
+    height: 30px;
+    background: #00ff99;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.quantity input {
+    width: 50px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.available {
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+/* Buttons */
+.actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.add-to-cart,
+.buy-now {
+    padding: 12px 20px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    background: #00ff99;
+    color: #111;
+}
+
+.buy-now {
+    background: #fff;
+    color: #111;
+}
+
+.buy-now:hover {
+    background: #ffcc00;
+}

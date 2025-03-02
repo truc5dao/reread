@@ -1,0 +1,156 @@
+.best-seller-header {
+    background-color: #097D4C;
+    height: 50px;
+    max-width: 83%;
+    width: 100%;
+    margin: auto;
+    border-radius: 10.12px;
+    color: #F2EDDA;
+    font-size: 30px;
+    justify-content: flex-start; /* Aligns text to the left */
+    display: flex;
+
+    align-items: center;
+    padding-left: 20px; /* Adds space from the left edge */
+    padding-right: 20px; /* Optional: keeps balance on the right */
+    position: relative; /* Initially relative */
+    font-weight: bold;
+    margin-bottom: 25px;
+
+}
+
+
+.best-seller-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    padding: 20px 0;
+    text-align: center; /* Căn giữa nội dung */
+}
+
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); /* Giữ bố cục lưới */
+    gap: 20px;
+    justify-content: center; /* Căn giữa các item */
+    align-items: center;
+    width: 85%;
+    margin: auto; /* Đảm bảo căn giữa toàn bộ danh sách */
+}
+
+
+.book-item {
+    max-width: 190px;
+    background-color: rgba(57, 19, 25, 0.3);
+    border-radius: 6.3px;
+    padding: 3.9%;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.book-item img {
+    width: auto;
+    height: 189.03px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+@media (max-width: 1024px) {
+    .book-list {
+        grid-template-columns: repeat(2, minmax(190px, 1fr));
+        justify-content: center; /* Đảm bảo các item luôn ở giữa */
+    }
+}
+
+@media (max-width: 600px) {
+    .book-list {
+        grid-template-columns: repeat(1, minmax(190px, 1fr));
+        justify-content: center;
+    }
+}
+
+
+.book-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 8px 0;
+    height: 50px ;
+}
+
+.book-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #6F002F;
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between price and discount */
+}
+
+.book-discount {
+    font-size: 18px;
+    font-weight: bold;    
+    background-color: #fff;
+    color: #6F002F;
+    border-radius: 6.3px;
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between price and discount */
+}
+
+.book-price-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    gap: 10px; /* Space between price and discount */
+    width: 100%; /* Ensure it takes the full width of the book item */
+}
+
+
+.book-old-price {
+    font-size: 14px;
+    color: rgba(0,0,0,0.7);
+
+    text-decoration: line-through;
+}
+
+.book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;  /* Ensures the item looks clickable */
+
+}
+
+.load-more-btn {
+    color: #097D4C;
+    border-color: #097D4C;
+    font-weight: bold;
+    background-color: white;
+    height: 54.06px;
+    width: 360.41px;
+    padding: 10px 15px;
+    border-radius: 9.01px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px auto; /* Center the button with auto margins */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+    border: 2px solid transparent; /* Ensure border color is visible */
+    margin-bottom: 55px
+}
+
+.load-more-btn:hover {
+    background-color: #097D4C;
+    color: white;
+}
+
+.load-more-container {
+    display: flex; /* Use flexbox to center the button container */
+    justify-content: center; /* Center the button container horizontally */
+    width: 100%; /* Ensure it takes the full width */
+    margin-top: 20px; /* Optional: additional spacing above the button */
+}

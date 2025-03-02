@@ -1,0 +1,38 @@
+<div #header class="best-seller-header">
+    <p>
+        ⚡ Best Sellers
+
+    </p>
+</div>
+
+<!-- Centered book list -->
+<div class="best-seller-container">
+    <div class="book-list" *ngIf="books.length > 0; else loading">
+        <div *ngFor="let book of books | slice:0:visibleBooks" class="book-item">
+            <img [src]="'https://ik.imagekit.io/reRead2025/6T/' + book?.BookImg1" 
+                 [alt]="book?.BookTitle" class="book-image" />
+            <h3 class="book-title">{{ book?.BookTitle }}</h3>
+            <div class="book-price-container">
+                <span *ngIf="book?.BookPrice != null" class="book-price">
+                    {{ (book?.BookPrice ?? 0) * (100 - (book?.BookSales ?? 0)) / 100 | currency:'USD' }}
+                </span>
+                <span class="book-discount">
+                    -{{ book?.BookSales }}%
+                </span>
+            </div>
+            <p class="book-old-price">{{ book?.BookPrice | currency:'USD' }}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Show loading message when books are not yet loaded -->
+<ng-template #loading>
+    <p>Loading books...</p>
+</ng-template>
+
+<!-- Load more button -->
+<div class="load-more-container" *ngIf="visibleBooks < books.length">
+    <button class="load-more-btn" (click)="loadMore()">
+        More
+    </button>
+</div>

@@ -1,0 +1,28 @@
+.promo-section {
+    display: grid;
+    grid-template-columns: 62% 38%;
+    gap: 1.5%;
+    margin: 100px 60px;
+  }
+  
+  .promo-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push first img to top, second to bottom */
+    height: 100%;
+  }
+  
+  .promo-item {
+    width: 100%;
+}
+  
+  .promo-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .promo-item:hover {
+    transform: scale(1.02);
+  }
+  
